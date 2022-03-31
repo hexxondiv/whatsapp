@@ -55,7 +55,7 @@ class WhatsAppApi
         if (empty($caption))
             return $this->sendRequest("POST", "messages/document", $params);
         $pst = $this->sendRequest("POST", "messages/document", $params);
-        if(isset($pst['success'])&&$pst['success']=='true') {
+        if(isset($pst['sent'])&&$pst['sent']=='true') {
             $params = array("to" => $to, "body" => $caption, "priority" => $priority, 'referenceId' => $referenceId);
             return $this->sendRequest("POST", "messages/chat", $params);
         }
@@ -68,7 +68,7 @@ class WhatsAppApi
         if (empty($caption))
            return $this->sendRequest("POST", "messages/audio", $params);
         $pst = $this->sendRequest("POST", "messages/audio", $params);
-        if(isset($pst['success'])&&$pst['success']=='true') {
+        if(isset($pst['sent'])&&$pst['sent']=='true') {
             $params = array("to" => $to, "body" => $caption, "priority" => $priority, 'referenceId' => $referenceId);
             return $this->sendRequest("POST", "messages/chat", $params);
         }
@@ -81,7 +81,7 @@ class WhatsAppApi
         if (empty($caption))
            return $this->sendRequest("POST", "messages/voice", $params);
         $pst = $this->sendRequest("POST", "messages/voice", $params);
-        if(isset($pst['success'])&&$pst['success']=='true') {
+        if(isset($pst['sent'])&&$pst['sent']=='true') {
             $params = array("to" => $to, "body" => $caption, "priority" => $priority, 'referenceId' => $referenceId);
             return $this->sendRequest("POST", "messages/chat", $params);
         }
