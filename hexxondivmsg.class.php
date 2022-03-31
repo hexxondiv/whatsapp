@@ -54,10 +54,10 @@ class WhatsAppApi
         $params = array("to" => $to, "filename" => $filename, "document" => $document, "caption" => $caption, "priority" => $priority, 'referenceId' => $referenceId);
         if (empty($caption))
             return $this->sendRequest("POST", "messages/document", $params);
-        $pst = $this->sendRequest("POST", "messages/document", $params);
+        $params1 = array("to" => $to, "body" => $caption, "priority" => $priority, 'referenceId' => $referenceId);
+        $pst = $this->sendRequest("POST", "messages/chat", $params1);
         if(isset($pst['sent'])&&$pst['sent']=='true') {
-            $params = array("to" => $to, "body" => $caption, "priority" => $priority, 'referenceId' => $referenceId);
-            return $this->sendRequest("POST", "messages/chat", $params);
+            return $this->sendRequest("POST", "messages/document", $params);
         }
         return $pst;
     }
@@ -67,10 +67,10 @@ class WhatsAppApi
         $params = array("to" => $to, "audio" => $audio, "caption" => $caption, "priority" => $priority, 'referenceId' => $referenceId);
         if (empty($caption))
            return $this->sendRequest("POST", "messages/audio", $params);
-        $pst = $this->sendRequest("POST", "messages/audio", $params);
+        $params1 = array("to" => $to, "body" => $caption, "priority" => $priority, 'referenceId' => $referenceId);
+        $pst = $this->sendRequest("POST", "messages/chat", $params1);
         if(isset($pst['sent'])&&$pst['sent']=='true') {
-            $params = array("to" => $to, "body" => $caption, "priority" => $priority, 'referenceId' => $referenceId);
-            return $this->sendRequest("POST", "messages/chat", $params);
+            return $this->sendRequest("POST", "messages/audio", $params);
         }
         return $pst;
     }
@@ -80,10 +80,10 @@ class WhatsAppApi
         $params = array("to" => $to, "audio" => $audio, "caption" => $caption, "priority" => $priority, 'referenceId' => $referenceId);
         if (empty($caption))
            return $this->sendRequest("POST", "messages/voice", $params);
-        $pst = $this->sendRequest("POST", "messages/voice", $params);
+        $params1 = array("to" => $to, "body" => $caption, "priority" => $priority, 'referenceId' => $referenceId);
+        $pst = $this->sendRequest("POST", "messages/chat", $params1);
         if(isset($pst['sent'])&&$pst['sent']=='true') {
-            $params = array("to" => $to, "body" => $caption, "priority" => $priority, 'referenceId' => $referenceId);
-            return $this->sendRequest("POST", "messages/chat", $params);
+            return $this->sendRequest("POST", "messages/voice", $params);
         }
         return $pst;
     }
