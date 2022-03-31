@@ -1,0 +1,23 @@
+{
+"name": "hexxondiv/whatsapp",
+"description": "Lightweight PHP library for WhatsApp API to send the WhatsApp messages in PHP using ultramsg.com API",
+"type": "library",
+"repositories": [
+{
+"type": "vcs",
+"url": "https://github.com/hexxondiv/whatsapp"
+}
+],
+"version": "2.0.1",
+"license": "MIT",
+"authors": [
+{
+"name": "hexxondiv",
+"email": "hexxondiv@gmail.com"
+}
+], 
+"autoload": {
+"classmap": ["hexxondivmsg.class.php"]
+},
+"require": {}
+}
