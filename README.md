@@ -343,3 +343,6 @@ print_r($api);
 
 # Support
 Use **Issues** to contact me
+
+> Please note that this is a mere fork of the original library by ultramsg.com
+>>I merely included the referenceId part, because I needed it to distinguish multiple businesses I serve from one instance.
