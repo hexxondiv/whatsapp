@@ -38,33 +38,33 @@
 			return $this->sendRequest("POST","messages/chat",$params );
 		}
 		
-		public function sendImageMessage($to,$caption="",$image,$priority=10,$referenceId=''){
+		public function sendImageMessage($to,$image,$caption="",$priority=10,$referenceId=''){
 			$params =array("to"=>$to,"caption"=>$caption,"image"=>$image,"priority"=>$priority,'referenceId'=>$referenceId);
 			return $this->sendRequest("POST","messages/image",$params );
 		}
 		
-		public function sendDocumentMessage($to,$filename,$document,$priority=10,$referenceId=''){
-			$params =array("to"=>$to,"filename"=>$filename,"document"=>$document,"priority"=>$priority,'referenceId'=>$referenceId);
+		public function sendDocumentMessage($to,$filename,$document,$caption="",$priority=10,$referenceId=''){
+			$params =array("to"=>$to,"filename"=>$filename,"document"=>$document,"caption"=>$caption,"priority"=>$priority,'referenceId'=>$referenceId);
 			return $this->sendRequest("POST","messages/document",$params );
 		}
 		
-		public function sendAudioMessage($to,$audio,$priority=10,$referenceId=''){
-			$params =array("to"=>$to,"audio"=>$audio,"priority"=>$priority,'referenceId'=>$referenceId);
+		public function sendAudioMessage($to,$audio,$caption="",$priority=10,$referenceId=''){
+			$params =array("to"=>$to,"audio"=>$audio,"caption"=>$caption,"priority"=>$priority,'referenceId'=>$referenceId);
 			return $this->sendRequest("POST","messages/audio",$params );
 		}
 		
-		public function sendVoiceMessage($to,$audio,$priority=10,$referenceId=''){
-			$params =array("to"=>$to,"audio"=>$audio,"priority"=>$priority,'referenceId'=>$referenceId);
+		public function sendVoiceMessage($to,$audio,$caption="",$priority=10,$referenceId=''){
+			$params =array("to"=>$to,"audio"=>$audio,"caption"=>$caption,"priority"=>$priority,'referenceId'=>$referenceId);
 			return $this->sendRequest("POST","messages/voice",$params );
 		}
 		
-		public function sendVideoMessage($to,$video,$priority=10,$referenceId=''){
-			$params =array("to"=>$to,"video"=>$video,"priority"=>$priority,'referenceId'=>$referenceId);
+		public function sendVideoMessage($to,$video,$caption="",$priority=10,$referenceId=''){
+			$params =array("to"=>$to,"video"=>$video,"caption"=>$caption,"priority"=>$priority,'referenceId'=>$referenceId);
 			return $this->sendRequest("POST","messages/video",$params );
 		}
 		
-		public function sendLinkMessage($to,$link,$priority=10,$referenceId=''){
-			$params =array("to"=>$to,"link"=>$link,"priority"=>$priority,'referenceId'=>$referenceId);
+		public function sendLinkMessage($to,$link,$caption="",$priority=10,$referenceId=''){
+			$params =array("to"=>$to,"link"=>$link,"caption"=>$caption,"priority"=>$priority,'referenceId'=>$referenceId);
 			return $this->sendRequest("POST","messages/link",$params );
 		}
 		

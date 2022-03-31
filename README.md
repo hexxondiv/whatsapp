@@ -93,7 +93,7 @@ $to="put_your_mobile_number_here";
 $caption="image Caption"; 
 $image="https://file-example.s3-accelerate.amazonaws.com/images/test.jpg"; 
 $referenceId="WA-1232948374";
-$api=$client->sendImageMessage($to,$caption,$image,$referenceId);
+$api=$client->sendImageMessage($to,$image,$caption,$referenceId);
 print_r($api);
 ```
 ## Send Document 
@@ -104,12 +104,13 @@ Supported most extensions like ( zip , xlsx , csv , txt , pptx , docx ....etc ) 
 
 Max file size : 64MB .
 
-```php
+``` php
 $to="put_your_mobile_number_here"; 
 $filename="image Caption"; 
 $document="https://file-example.s3-accelerate.amazonaws.com/documents/cv.pdf"; 
 $referenceId="34564563563";
-$api=$client->sendDocumentMessage($to,$filename,$document,$referenceId);
+$caption="Document Caption";
+$api=$client->sendDocumentMessage($to,$filename,$document,$caption,$referenceId);
 print_r($api);
 ```
 
@@ -123,7 +124,8 @@ Max file size : 64MB .
 ```php 
 $to="put_your_mobile_number_here"; 
 $audio="https://file-example.s3-accelerate.amazonaws.com/audio/2.mp3"; 
-$api=$client->sendAudioMessage($to,$audio);
+$caption="Document Caption";
+$api=$client->sendAudioMessage($to,$audio,$caption);
 print_r($api);
 ```
 ## Send Voice 
@@ -145,7 +147,8 @@ Max file size : 64MB .
 ```php 
 $to="put_your_mobile_number_here"; 
 $video="https://file-example.s3-accelerate.amazonaws.com/video/test.mp4"; 
-$api=$client->sendVideoMessage($to,$video);
+$caption="Video Caption"
+$api=$client->sendVideoMessage($to,$video,$caption);
 print_r($api);
 ```
 ## Send Link 
@@ -154,7 +157,8 @@ print_r($api);
 ```php 
 $to="put_your_mobile_number_here"; 
 $link="https://ultramsg.com"; 
-$api=$client->sendLinkMessage($to,$link);
+$caption="link Caption"
+$api=$client->sendLinkMessage($to,$link,$caption);
 print_r($api);
 ```
 ## Send Contact 
